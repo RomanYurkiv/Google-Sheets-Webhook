@@ -9,7 +9,7 @@ export const configFile = (): Record<string, unknown> => ({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: true,
+    synchronize: false,
     migrationsRun: true,
     logging: false,
     logger: 'file',

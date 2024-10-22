@@ -2,7 +2,6 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {drive_v3, google, sheets_v4} from 'googleapis';
 import { GoogleAuth } from 'google-auth-library';
-import * as credentials from '../../credential.json';
 
 @Injectable()
 export class GoogleSheetsService implements OnModuleInit {
@@ -14,7 +13,7 @@ export class GoogleSheetsService implements OnModuleInit {
 
   onModuleInit() {
     const auth = new GoogleAuth({
-      credentials:  credentials,
+      credentials:  this.configService.get("googleServiceAccount"),
       scopes: ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive',  ],
     });
 

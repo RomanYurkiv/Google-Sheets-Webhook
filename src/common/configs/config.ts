@@ -26,4 +26,6 @@ export const configFile = (): Record<string, unknown> => ({
   
 
   brevoPassword: process.env.BREVO_PASSWORD,
+
+  googleServiceAccount: process.env.GOOGLE
 });

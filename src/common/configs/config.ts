@@ -9,7 +9,7 @@ export const configFile = (): Record<string, unknown> => ({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: false,
+    synchronize: true,
     migrationsRun: true,
     logging: false,
     logger: 'file',
@@ -18,7 +18,12 @@ export const configFile = (): Record<string, unknown> => ({
     extra: {
       charset: 'utf8mb4_unicode_ci',
     },
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
+
+  
 
   brevoPassword: process.env.BREVO_PASSWORD,
 

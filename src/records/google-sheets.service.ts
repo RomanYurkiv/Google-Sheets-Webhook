@@ -13,7 +13,7 @@ export class GoogleSheetsService implements OnModuleInit {
 
   onModuleInit() {
     const auth = new GoogleAuth({
-      credentials:  this.configService.get("googleServiceAccount"),
+      credentials:  JSON.parse(this.configService.get("googleServiceAccount")),
       scopes: ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive',  ],
     });
 
